@@ -17,7 +17,7 @@ const camera = new THREE.PerspectiveCamera(
     0.1,
     1000
 );
-camera.position.set(0, 0, 6);
+camera.position.set(0, 0, 7);
 
 // Set up the renderer
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
@@ -30,7 +30,7 @@ document.body.appendChild(renderer.domElement);
 
 // Add HDRI lighting
 const rgbeLoader = new RGBELoader();
-rgbeLoader.load('https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/blue_lagoon_night_1k.hdr', function (texture) {
+rgbeLoader.load('https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/kloofendal_48d_partly_cloudy_puresky_1k.hdr', function (texture) {
     texture.mapping = THREE.EquirectangularReflectionMapping;
     scene.environment = texture;
     scene.background = texture;
@@ -44,12 +44,12 @@ let mixer;
 let clip;
 let action;
 
-loader.load('./src/new.glb', function (gltf) {
+loader.load('./new1.glb', function (gltf) {
     gltfScene = gltf.scene;
     gltfScene.intensity=10
     scene.add(gltfScene);
 
-    gltfScene.position.set(4, -3, -1);
+    gltfScene.position.set(6, -1, -1);
 
     mixer = new AnimationMixer(gltfScene);
 
