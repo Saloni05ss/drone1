@@ -44,7 +44,7 @@ let mixer;
 let clip;
 let action;
 
-loader.load('./new1.glb', function (gltf) {
+loader.load('./new.glb', function (gltf) {
     gltfScene = gltf.scene;
     gltfScene.intensity=10
     scene.add(gltfScene);
